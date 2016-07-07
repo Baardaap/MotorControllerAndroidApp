@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-
-</LinearLayout>
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Motor 1"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMotor1"
+        android:paddingLeft="20dp"
+        android:paddingTop="25dp" />
+    <SeekBar
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekMotor1"
+        android:layout_toRightOf="@id/textMotor1"
+        android:layout_alignBottom="@id/textMotor1"
+        android:layout_marginLeft="20dp" />
+    <TextView
+        android:text="Motor 2"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMotor2"
+        android:layout_below="@id/textMotor1"
+        android:layout_alignEnd="@id/textMotor1"
+        android:layout_marginTop="20dp" />
+    <SeekBar
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekMotor2"
+        android:layout_toRightOf="@id/textMotor2"
+        android:layout_alignBottom="@id/textMotor2"
+        android:layout_marginLeft="20dp" />
+</RelativeLayout>
