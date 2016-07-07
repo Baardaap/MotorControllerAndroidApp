@@ -16,7 +16,16 @@
         android:id="@+id/seekMotor1"
         android:layout_toRightOf="@id/textMotor1"
         android:layout_alignBottom="@id/textMotor1"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="40dp" />
+    <TextView
+        android:text="0%"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textPersentMotor1"
+        android:layout_toRightOf="@id/seekMotor1"
+        android:layout_alignBottom="@id/seekMotor1"
+        android:layout_marginLeft="40dp" />
     <TextView
         android:text="Motor 2"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -32,5 +41,39 @@
         android:id="@+id/seekMotor2"
         android:layout_toRightOf="@id/textMotor2"
         android:layout_alignBottom="@id/textMotor2"
-        android:layout_marginLeft="20dp" />
+        android:layout_alignLeft="@id/seekMotor1" />
+    <TextView
+        android:text="0%"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textPersentMotor2"
+        android:layout_toRightOf="@id/seekMotor2"
+        android:layout_alignBottom="@id/seekMotor2"
+        android:layout_marginLeft="40dp" />
+    <TextView
+        android:text="Motor 3"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMotor3"
+        android:layout_below="@id/textMotor2"
+        android:layout_alignEnd="@id/textMotor2"
+        android:layout_marginTop="20dp" />
+    <SeekBar
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekMotor3"
+        android:layout_toRightOf="@id/textMotor3"
+        android:layout_alignBottom="@id/textMotor3"
+        android:layout_alignLeft="@id/seekMotor1" />
+    <TextView
+        android:text="0%"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textPersentMotor3"
+        android:layout_toRightOf="@id/seekMotor3"
+        android:layout_alignBottom="@id/seekMotor3"
+        android:layout_marginLeft="40dp" />
 </RelativeLayout>
