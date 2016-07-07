@@ -22,7 +22,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textPersentMotor1"
+        android:id="@+id/textPercentMotor1"
         android:layout_toRightOf="@id/seekMotor1"
         android:layout_alignBottom="@id/seekMotor1"
         android:layout_marginLeft="40dp" />
@@ -47,7 +47,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textPersentMotor2"
+        android:id="@+id/textPercentMotor2"
         android:layout_toRightOf="@id/seekMotor2"
         android:layout_alignBottom="@id/seekMotor2"
         android:layout_marginLeft="40dp" />
@@ -72,7 +72,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textPersentMotor3"
+        android:id="@+id/textPercentMotor3"
         android:layout_toRightOf="@id/seekMotor3"
         android:layout_alignBottom="@id/seekMotor3"
         android:layout_marginLeft="40dp" />

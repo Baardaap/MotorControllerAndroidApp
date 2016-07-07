@@ -79,13 +79,13 @@ namespace Motor_Controller
 			public const int textMotor3 = 2131034118;
 			
 			// aapt resource value: 0x7f050002
-			public const int textPersentMotor1 = 2131034114;
+			public const int textPercentMotor1 = 2131034114;
 			
 			// aapt resource value: 0x7f050005
-			public const int textPersentMotor2 = 2131034117;
+			public const int textPercentMotor2 = 2131034117;
 			
 			// aapt resource value: 0x7f050008
-			public const int textPersentMotor3 = 2131034120;
+			public const int textPercentMotor3 = 2131034120;
 			
 			static Id()
 			{
