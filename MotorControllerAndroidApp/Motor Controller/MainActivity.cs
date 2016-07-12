@@ -30,7 +30,6 @@ namespace Motor_Controller
         static IPAddress serverAddr;
         IPEndPoint endPoint;
         string message;
-        byte[] send_buffer;
 
 
         protected override void OnCreate(Bundle bundle)
@@ -53,10 +52,9 @@ namespace Motor_Controller
             PercentMotor3 = 0;
 
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            serverAddr = IPAddress.Parse("192.168.0.101");
+            serverAddr = IPAddress.Parse("192.168.0.8");
             endPoint = new IPEndPoint(serverAddr, 11000);
             message = "";
-            send_buffer = Encoding.ASCII.GetBytes(message);
 
             seekMotor1.ProgressChanged += (object sender, SeekBar.ProgressChangedEventArgs e) =>
             {
@@ -73,7 +71,7 @@ namespace Motor_Controller
             seekMotor3.ProgressChanged += (object sender, SeekBar.ProgressChangedEventArgs e) =>
             {
                 textMotorPercentMotor3.Text = string.Format("{0}%", e.Progress);
-                PercentMotor2 = e.Progress;
+                PercentMotor3 = e.Progress;
             };
 
             seekMotor1.StopTrackingTouch += (object sender, SeekBar.StopTrackingTouchEventArgs e) =>
@@ -94,8 +92,11 @@ namespace Motor_Controller
 
         public void SendNewValue(int motor, int value)
         {
-            message = "%" + motor.ToString() + "," + value.ToString() + "#"; 
+            byte[] send_buffer;
+            message = "%" + motor.ToString() + "," + value.ToString() + "#";
+            send_buffer = Encoding.ASCII.GetBytes(message);
             sock.SendTo(send_buffer, endPoint);
+            message = "";
         }
     }
 }
