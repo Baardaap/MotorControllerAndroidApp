@@ -52,7 +52,7 @@ namespace Motor_Controller
             PercentMotor3 = 0;
 
             sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            serverAddr = IPAddress.Parse("192.168.0.8");
+            serverAddr = IPAddress.Parse("192.168.0.101");
             endPoint = new IPEndPoint(serverAddr, 11000);
             message = "";
 
