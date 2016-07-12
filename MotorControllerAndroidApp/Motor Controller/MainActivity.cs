@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -23,6 +26,12 @@ namespace Motor_Controller
         TextView textMotorPercentMotor3;
         int PercentMotor3;
 
+        Socket sock;
+        static IPAddress serverAddr;
+        IPEndPoint endPoint;
+        string message;
+        byte[] send_buffer;
+
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -42,6 +51,12 @@ namespace Motor_Controller
             seekMotor3 = FindViewById<SeekBar>(Resource.Id.seekMotor3);
             textMotorPercentMotor3 = FindViewById<TextView>(Resource.Id.textPercentMotor3);
             PercentMotor3 = 0;
+
+            sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+            serverAddr = IPAddress.Parse("192.168.2.255");
+            endPoint = new IPEndPoint(serverAddr, 11000);
+            message = "";
+            send_buffer = Encoding.ASCII.GetBytes(message);
 
             seekMotor1.ProgressChanged += (object sender, SeekBar.ProgressChangedEventArgs e) =>
             {
@@ -79,7 +94,8 @@ namespace Motor_Controller
 
         public void SendNewValue(int motor, int value)
         {
-
+            message = "%" + motor.ToString() + "," + value.ToString() + "#"; 
+            sock.SendTo(send_buffer, endPoint);
         }
     }
 }
